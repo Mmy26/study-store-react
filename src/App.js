@@ -7,30 +7,10 @@ import { UserCard } from "./components/organisms/user/UserCard";
 import { HeaderOnly } from "./components/templetes/HeaderOnly";
 import { BrowserRouter } from "react-router-dom";
 import { DefaultLayout } from "./components/templetes/DefaultLayout";
+import { Router } from "./router/Router";
 
-const user = {
-  name: "じゃけえ",
-  image: "https://source.unsplash.com/lFmuWU0tv4M",
-  email: "aaaa@1111.com",
-  phone: "000 - 000 - 1234",
-  company: {
-    name: "テスト株式会社",
-  },
-  website: "https://google.com",
-};
 function App() {
-  return (
-    <BrowserRouter>
-      <DefaultLayout>
-        <PrimaryButton children={"検索"}></PrimaryButton>
-        <SecondaryButton></SecondaryButton>
-        <br />
-        <SearchInput />
-        <br />
-        <UserCard user={user} />
-      </DefaultLayout>
-    </BrowserRouter>
-  );
+  return <Router />;
 }
 
 export default App;
