@@ -4,6 +4,9 @@ import { PrimaryButton } from "./components/atoms/button/PrimaryButton.jsx";
 import { SecondaryButton } from "./components/atoms/button/SecondaryButton.jsx";
 import { SearchInput } from "./components/moleucules/SearchInput";
 import { UserCard } from "./components/organisms/user/UserCard";
+import { HeaderOnly } from "./components/templetes/HeaderOnly";
+import { BrowserRouter } from "react-router-dom";
+import { DefaultLayout } from "./components/templetes/DefaultLayout";
 
 const user = {
   name: "じゃけえ",
@@ -17,14 +20,16 @@ const user = {
 };
 function App() {
   return (
-    <div className="App">
-      <PrimaryButton children={"検索"}></PrimaryButton>
-      <SecondaryButton></SecondaryButton>
-      <br />
-      <SearchInput />
-      <br />
-      <UserCard user={user} />
-    </div>
+    <BrowserRouter>
+      <DefaultLayout>
+        <PrimaryButton children={"検索"}></PrimaryButton>
+        <SecondaryButton></SecondaryButton>
+        <br />
+        <SearchInput />
+        <br />
+        <UserCard user={user} />
+      </DefaultLayout>
+    </BrowserRouter>
   );
 }
 
